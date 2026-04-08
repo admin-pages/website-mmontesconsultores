@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios | MMontes Consultores SRL</title>
+  <meta name="description" content="Conozca los servicios de MMontes Consultores SRL: auditoría, gobierno corporativo, consultoría financiera, asesoría tributaria, precios de transferencia, certificaciones CPA y capacitación empresarial." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #163B6D;
+      --primary-2: #245C9F;
+      --accent: #C7A15A;
+      --bg-soft: #F7F9FC;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --white: #FFFFFF;
+      --shadow: 0 15px 40px rgba(22, 59, 109, 0.12);
+      --radius: 18px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand img {
+      height: 52px;
+      width: auto;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-weight: 600;
+      margin-left: 0.6rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-2);
+    }
+
+    .btn-brand {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      border: none;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(36, 92, 159, 0.25);
+    }
+
+    .btn-brand:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-brand {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.85rem 1.4rem;
+      font-weight: 600;
+    }
+
+    .btn-outline-brand:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .page-hero {
+      padding: 130px 0 80px;
+      background:
+        linear-gradient(rgba(10, 26, 48, 0.78), rgba(22, 59, 109, 0.8)),
+        url('assets/hero-servicios.jpg') center/cover no-repeat;
+      color: white;
+    }
+
+    .page-hero .badge-soft {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.08rem;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .service-block {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(22, 59, 109, 0.06);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .service-header {
+      padding: 2rem 2rem 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .service-header h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+    }
+
+    .service-header p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .service-body {
+      padding: 0 2rem 2rem;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 0;
+    }
+
+    .service-list li {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(22, 59, 109, 0.08);
+      color: var(--text);
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    .service-list i {
+      color: var(--accent);
+      margin-top: 2px;
+      font-size: 0.95rem;
+    }
+
+    .mini-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(22, 59, 109, 0.06);
+      box-shadow: var(--shadow);
+      height: 100%;
+      text-align: center;
+    }
+
+    .mini-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .mini-card h4 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary), #0F2747);
+      color: white;
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 0;
+    }
+
+    .footer {
+      background: #0F2138;
+      color: rgba(255,255,255,0.82);
+      padding: 30px 0;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: white;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      font-size: 1.7rem;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 991.98px) {
+      .page-hero {
+        padding-top: 110px;
+      }
+
+      .navbar-brand img {
+        height: 45px;
+      }
+
+      .service-header,
+      .service-body {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .cta-box {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="MMontes Consultores SRL">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-brand" href="contacto.html">Solicitar asesoría</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-soft">Servicios profesionales</span>
+      <h1>Soluciones técnicas para organizaciones que requieren control, criterio y confianza</h1>
+      <p>
+        Acompañamos a empresas, asociaciones y entidades con servicios especializados en auditoría, cumplimiento, consultoría financiera y fortalecimiento institucional, con una visión preventiva y orientada a riesgos. :contentReference[oaicite:1]{index=1}
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Áreas de servicio</h2>
+        <p class="section-subtitle">
+          Cada servicio está diseñado para aportar transparencia, soporte técnico y mejores decisiones dentro de su organización.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-6">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-search"></i></div>
+              <div>
+                <h3>Auditoría</h3>
+                <p>Servicios orientados a revisar, fortalecer y respaldar la integridad de la información y de los procesos de control. :contentReference[oaicite:2]{index=2}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Auditoría externa de estados financieros</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Auditoría interna (outsourcing / co-sourcing)</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Auditorías especiales en denuncias, cumplimiento y gobierno corporativo</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Evaluación y fortalecimiento del control interno</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
+              <div>
+                <h3>Gobierno Corporativo y Control Interno</h3>
+                <p>Fortalecimiento del marco organizacional para elevar la supervisión, la trazabilidad y la disciplina institucional. :contentReference[oaicite:3]{index=3}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Diseño y actualización de políticas institucionales</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Elaboración de manuales de políticas y procedimientos</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Evaluación del marco normativo interno</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Fortalecimiento del sistema de control interno</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Asesoría técnica a Juntas Directivas y órganos de fiscalización</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-bar-chart-line"></i></div>
+              <div>
+                <h3>Consultoría Financiera</h3>
+                <p>Herramientas para analizar viabilidad, sostenibilidad y proyección financiera con soporte técnico. :contentReference[oaicite:4]{index=4}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Estudios financieros</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Flujos de caja proyectados</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Evaluación de inversiones</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Análisis de rentabilidad y sostenibilidad</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-receipt-cutoff"></i></div>
+              <div>
+                <h3>Asesoría Tributaria y Cumplimiento</h3>
+                <p>Apoyo técnico para atender obligaciones fiscales y gestionar riesgos tributarios con mayor seguridad. :contentReference[oaicite:5]{index=5}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Cumplimiento fiscal</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Planeación tributaria</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Atención de requerimientos de la Administración Tributaria</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Identificación y gestión de riesgos fiscales</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-arrow-left-right"></i></div>
+              <div>
+                <h3>Precios de Transferencia</h3>
+                <p>Servicios técnicos para documentación, soporte y análisis conforme a la normativa fiscal vigente. :contentReference[oaicite:6]{index=6}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Elaboración de estudios de precios de transferencia</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Análisis funcional y de comparabilidad</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Documentación soporte conforme normativa fiscal vigente</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Atención de requerimientos de la Administración Tributaria</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-patch-check"></i></div>
+              <div>
+                <h3>Certificaciones CPA</h3>
+                <p>Informes y certificaciones profesionales para procesos financieros, regulatorios y bancarios. :contentReference[oaicite:7]{index=7}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Certificación de ingresos</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Certificación de saldos</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Certificaciones para entidades financieras y procesos regulatorios</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Informes conforme a circulares del Colegio de Contadores Públicos</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="service-block">
+            <div class="service-header">
+              <div class="service-icon"><i class="bi bi-mortarboard"></i></div>
+              <div>
+                <h3>Capacitación Empresarial</h3>
+                <p>Espacios formativos para fortalecer capacidades técnicas, cultura de control y comprensión normativa dentro de la organización. :contentReference[oaicite:8]{index=8}</p>
+              </div>
+            </div>
+            <div class="service-body">
+              <ul class="service-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>NIIF y normativa contable</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Control interno y gestión de riesgos</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Gobierno corporativo</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Talleres técnicos especializados</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">¿Qué aporta nuestro enfoque?</h2>
+        <p class="section-subtitle">
+          No solo prestamos servicios técnicos: ayudamos a que la organización gane claridad, estructura y confianza para decidir mejor.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <i class="bi bi-shield-lock"></i>
+            <h4>Mayor control</h4>
+            <p>Procesos más sólidos, mejor supervisión y menor exposición a errores o incumplimientos.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <i class="bi bi-eye"></i>
+            <h4>Transparencia</h4>
+            <p>Información mejor estructurada para respaldar rendición de cuentas y trazabilidad.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <i class="bi bi-graph-up"></i>
+            <h4>Mejores decisiones</h4>
+            <p>Soporte técnico orientado a sostenibilidad, riesgos y crecimiento institucional.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <i class="bi bi-person-check"></i>
+            <h4>Acompañamiento</h4>
+            <p>Atención profesional, confiable y adaptada a la realidad de cada organización.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <h2 class="mb-3">¿Necesita una propuesta a la medida?</h2>
+            <p>
+              Podemos ayudarle a identificar el servicio adecuado según el tamaño, el giro y las necesidades de control, cumplimiento o análisis financiero de su organización.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contacto.html" class="btn btn-light rounded-pill px-4 py-3 fw-semibold">Solicitar contacto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-7">
+          <p class="mb-0">© 2026 MMontes Consultores SRL. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-5 text-md-end">
+          <a href="about.html" class="me-3">Quiénes somos</a>
+          <a href="servicios.html" class="me-3">Servicios</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/50683025114" target="_blank" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
