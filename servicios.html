@@ -66,6 +66,7 @@
       border-radius: 999px;
       font-weight: 600;
       box-shadow: 0 10px 25px rgba(36, 92, 159, 0.25);
+      transition: all 0.25s ease;
     }
 
     .btn-brand:hover {
@@ -89,12 +90,12 @@
     .page-hero {
       padding: 130px 0 80px;
       background:
-        linear-gradient(rgba(10, 26, 48, 0.78), rgba(22, 59, 109, 0.8)),
+        linear-gradient(rgba(10, 26, 48, 0.78), rgba(22, 59, 109, 0.80)),
         url('assets/hero-servicios.jpg') center/cover no-repeat;
       color: white;
     }
 
-    .page-hero .badge-soft {
+    .badge-soft {
       display: inline-block;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.18);
@@ -115,6 +116,7 @@
       max-width: 760px;
       color: rgba(255,255,255,0.9);
       font-size: 1.08rem;
+      margin-bottom: 0;
     }
 
     .section {
@@ -144,6 +146,12 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       height: 100%;
+      transition: all 0.25s ease;
+    }
+
+    .service-block:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(22, 59, 109, 0.15);
     }
 
     .service-header {
@@ -204,6 +212,7 @@
       color: var(--accent);
       margin-top: 2px;
       font-size: 0.95rem;
+      flex-shrink: 0;
     }
 
     .mini-card {
@@ -278,6 +287,7 @@
       box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
       z-index: 999;
       text-decoration: none;
+      transition: all 0.25s ease;
     }
 
     .whatsapp-float:hover {
@@ -292,6 +302,10 @@
 
       .navbar-brand img {
         height: 45px;
+      }
+
+      .section {
+        padding: 70px 0;
       }
 
       .service-header,
@@ -314,7 +328,7 @@
         <img src="logo.png" alt="MMontes Consultores SRL">
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -352,7 +366,6 @@
       </div>
 
       <div class="row g-4">
-
         <div class="col-lg-6">
           <div class="service-block">
             <div class="service-header">
@@ -493,7 +506,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -576,7 +588,7 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/50683025114" target="_blank" aria-label="WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/50683025114" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
