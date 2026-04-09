@@ -66,6 +66,7 @@
       border-radius: 999px;
       font-weight: 600;
       box-shadow: 0 10px 25px rgba(36, 92, 159, 0.25);
+      transition: all 0.25s ease;
     }
 
     .btn-brand:hover {
@@ -102,13 +103,11 @@
       max-width: 760px;
       color: rgba(255,255,255,0.9);
       font-size: 1.08rem;
+      margin-bottom: 0;
     }
 
     .section {
       padding: 90px 0;
-    }
-
-    .section-soft {
       background: var(--bg-soft);
     }
 
@@ -118,12 +117,6 @@
       margin-bottom: 0.75rem;
     }
 
-    .section-subtitle {
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
     .contact-card,
     .info-card,
     .trust-card {
@@ -131,16 +124,21 @@
       border-radius: 24px;
       border: 1px solid rgba(22, 59, 109, 0.06);
       box-shadow: var(--shadow);
-      height: 100%;
+      overflow: hidden;
     }
 
     .contact-card {
       padding: 2rem;
+      height: 100%;
     }
 
     .info-card {
       padding: 2rem;
-      margin-bottom: 1.5rem;
+    }
+
+    .trust-card {
+      padding: 2rem;
+      margin-top: 1.5rem;
     }
 
     .contact-label {
@@ -154,6 +152,7 @@
       color: var(--text);
       font-weight: 600;
       margin-bottom: 0;
+      word-break: break-word;
     }
 
     .contact-value a {
@@ -203,10 +202,6 @@
       box-shadow: 0 0 0 0.2rem rgba(36, 92, 159, 0.15);
     }
 
-    .trust-card {
-      padding: 2rem;
-    }
-
     .trust-list {
       list-style: none;
       padding: 0;
@@ -229,6 +224,7 @@
     .trust-list i {
       color: var(--accent);
       margin-top: 2px;
+      flex-shrink: 0;
     }
 
     .cta-mini {
@@ -236,7 +232,7 @@
       color: white;
       border-radius: 24px;
       padding: 2rem;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
     }
 
     .cta-mini p {
@@ -275,6 +271,7 @@
       box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
       z-index: 999;
       text-decoration: none;
+      transition: all 0.25s ease;
     }
 
     .whatsapp-float:hover {
@@ -290,6 +287,16 @@
       .navbar-brand img {
         height: 45px;
       }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .contact-card,
+      .info-card,
+      .trust-card {
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -301,7 +308,7 @@
         <img src="logo.png" alt="MMontes Consultores SRL">
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -331,8 +338,8 @@
 
   <section class="section">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-5">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5 d-flex flex-column">
           <div class="info-card">
             <h2 class="section-title h3">Información de contacto</h2>
 
@@ -369,7 +376,7 @@
               <div>
                 <div class="contact-label">WhatsApp</div>
                 <p class="contact-value">
-                  <a href="https://wa.me/50683025114" target="_blank">Escribir por WhatsApp</a>
+                  <a href="https://wa.me/50683025114" target="_blank" rel="noopener">Escribir por WhatsApp</a>
                 </p>
               </div>
             </div>
@@ -405,28 +412,28 @@
               Complete el formulario y cuéntenos brevemente qué tipo de apoyo necesita.
             </p>
 
-            <form action="https://formspree.io/f/maqlzaqz" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/maqlzaqz" method="POST">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label" for="nombre">Nombre completo</label>
                   <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Su nombre" required>
                 </div>
-            
+
                 <div class="col-md-6">
                   <label class="form-label" for="email">Correo electrónico</label>
                   <input type="email" id="email" name="email" class="form-control" placeholder="nombre@correo.com" required>
                 </div>
-            
+
                 <div class="col-md-6">
                   <label class="form-label" for="telefono">Teléfono</label>
                   <input type="text" id="telefono" name="telefono" class="form-control" placeholder="+506 ..." required>
                 </div>
-            
+
                 <div class="col-md-6">
                   <label class="form-label" for="empresa">Empresa u organización</label>
                   <input type="text" id="empresa" name="empresa" class="form-control" placeholder="Nombre de la empresa">
                 </div>
-            
+
                 <div class="col-12">
                   <label class="form-label" for="servicio">Servicio de interés</label>
                   <select id="servicio" name="servicio" class="form-select" required>
@@ -441,25 +448,24 @@
                     <option>Otro</option>
                   </select>
                 </div>
-            
+
                 <div class="col-12">
                   <label class="form-label" for="mensaje">Mensaje</label>
                   <textarea id="mensaje" name="mensaje" class="form-control" rows="6" placeholder="Describa brevemente su necesidad" required></textarea>
                 </div>
-            
+
                 <div class="col-12">
                   <input type="hidden" name="_subject" value="Nuevo contacto desde MMontes Consultores">
                   <input type="hidden" name="_language" value="es">
-                  <button type="submit" class="btn btn-brand">Enviar consulta</button>
+                  <button type="submit" class="btn btn-brand" id="submitBtn">Enviar consulta</button>
                 </div>
               </div>
-              <input type="hidden" name="_next" value="https://admin-pages.github.io/mmontesconsultores/gracias.html">
             </form>
 
             <div class="cta-mini">
               <h3 class="h4 mb-2">Respuesta ágil y profesional</h3>
               <p>
-                Este formulario está listo en diseño. En el siguiente paso lo conectamos para que los mensajes lleguen a su correo automáticamente.
+                Su consulta será recibida directamente a través del formulario. Si lo prefiere, también puede escribirnos por correo electrónico para una atención más directa.
               </p>
               <a href="mailto:mmontesconsultorescr@gmail.com" class="btn btn-light rounded-pill px-4 py-2 fw-semibold">Enviar correo directo</a>
             </div>
@@ -484,10 +490,46 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/50683025114" target="_blank" aria-label="WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/50683025114" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          window.location.href = 'gracias.html';
+        } else {
+          alert('Hubo un problema al enviar el formulario. Inténtelo de nuevo.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar consulta';
+        }
+      } catch (error) {
+        alert('No se pudo enviar el formulario. Revise su conexión e intente nuevamente.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar consulta';
+      }
+    });
+  </script>
 </body>
 </html>
