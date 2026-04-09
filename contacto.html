@@ -405,32 +405,32 @@
               Complete el formulario y cuéntenos brevemente qué tipo de apoyo necesita.
             </p>
 
-            <form>
+            <form action="https://formspree.io/f/maqlzaqz" method="POST">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label">Nombre completo</label>
-                  <input type="text" class="form-control" placeholder="Su nombre">
+                  <label class="form-label" for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Su nombre" required>
                 </div>
-
+            
                 <div class="col-md-6">
-                  <label class="form-label">Correo electrónico</label>
-                  <input type="email" class="form-control" placeholder="nombre@correo.com">
+                  <label class="form-label" for="email">Correo electrónico</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="nombre@correo.com" required>
                 </div>
-
+            
                 <div class="col-md-6">
-                  <label class="form-label">Teléfono</label>
-                  <input type="text" class="form-control" placeholder="+506 ...">
+                  <label class="form-label" for="telefono">Teléfono</label>
+                  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="+506 ..." required>
                 </div>
-
+            
                 <div class="col-md-6">
-                  <label class="form-label">Empresa u organización</label>
-                  <input type="text" class="form-control" placeholder="Nombre de la empresa">
+                  <label class="form-label" for="empresa">Empresa u organización</label>
+                  <input type="text" id="empresa" name="empresa" class="form-control" placeholder="Nombre de la empresa">
                 </div>
-
+            
                 <div class="col-12">
-                  <label class="form-label">Servicio de interés</label>
-                  <select class="form-select">
-                    <option selected disabled>Seleccione una opción</option>
+                  <label class="form-label" for="servicio">Servicio de interés</label>
+                  <select id="servicio" name="servicio" class="form-select" required>
+                    <option value="" selected disabled>Seleccione una opción</option>
                     <option>Auditoría</option>
                     <option>Gobierno Corporativo y Control Interno</option>
                     <option>Consultoría Financiera</option>
@@ -441,13 +441,15 @@
                     <option>Otro</option>
                   </select>
                 </div>
-
+            
                 <div class="col-12">
-                  <label class="form-label">Mensaje</label>
-                  <textarea class="form-control" rows="6" placeholder="Describa brevemente su necesidad"></textarea>
+                  <label class="form-label" for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" class="form-control" rows="6" placeholder="Describa brevemente su necesidad" required></textarea>
                 </div>
-
+            
                 <div class="col-12">
+                  <input type="hidden" name="_subject" value="Nuevo contacto desde MMontes Consultores">
+                  <input type="hidden" name="_language" value="es">
                   <button type="submit" class="btn btn-brand">Enviar consulta</button>
                 </div>
               </div>
