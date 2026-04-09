@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiénes Somos | MMontes Consultores SRL</title>
+  <meta name="description" content="Conozca a MMontes Consultores SRL, firma costarricense especializada en auditoría, control interno, consultoría financiera, cumplimiento normativo y gobierno corporativo." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #163B6D;
+      --primary-2: #245C9F;
+      --accent: #C7A15A;
+      --bg-soft: #F7F9FC;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --white: #FFFFFF;
+      --shadow: 0 15px 40px rgba(22, 59, 109, 0.12);
+      --radius: 18px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand img {
+      height: 52px;
+      width: auto;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      font-weight: 600;
+      margin-left: 0.6rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-2);
+    }
+
+    .btn-brand {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      border: none;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(36, 92, 159, 0.25);
+    }
+
+    .btn-brand:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-brand {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.85rem 1.4rem;
+      font-weight: 600;
+    }
+
+    .btn-outline-brand:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .page-hero {
+      padding: 130px 0 80px;
+      background:
+        linear-gradient(rgba(10, 26, 48, 0.80), rgba(22, 59, 109, 0.82)),
+        url('assets/hero-about.jpg') center/cover no-repeat;
+      color: white;
+    }
+
+    .badge-soft {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.08rem;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .content-card,
+    .pillar-card,
+    .director-card,
+    .metric-card {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(22, 59, 109, 0.06);
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .content-card,
+    .director-card {
+      padding: 2rem;
+    }
+
+    .pillar-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .pillar-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(22, 59, 109, 0.08);
+      color: var(--primary);
+      font-size: 1.6rem;
+    }
+
+    .pillar-card h4,
+    .director-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-card p,
+    .content-card p,
+    .director-card p,
+    .metric-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .metric-card {
+      padding: 1.8rem;
+      text-align: center;
+    }
+
+    .metric-card h3 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 0;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(22, 59, 109, 0.08);
+      color: var(--text);
+    }
+
+    .check-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check-list i {
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .director-badge {
+      display: inline-block;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(22, 59, 109, 0.08);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary), #0F2747);
+      color: white;
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 0;
+    }
+
+    .footer {
+      background: #0F2138;
+      color: rgba(255,255,255,0.82);
+      padding: 30px 0;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: white;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      font-size: 1.7rem;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 991.98px) {
+      .page-hero {
+        padding-top: 110px;
+      }
+
+      .navbar-brand img {
+        height: 45px;
+      }
+
+      .cta-box {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="MMontes Consultores SRL">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-brand" href="contacto.html">Solicitar asesoría</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-soft">Quiénes somos</span>
+      <h1>Experiencia técnica, independencia y compromiso con la transparencia</h1>
+      <p>
+        MMontes Consultores S.R.L. es una empresa costarricense de servicios profesionales especializada en auditoría, consultoría financiera, cumplimiento normativo y fortalecimiento del control interno y la gobernanza institucional. :contentReference[oaicite:0]{index=0}
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <div class="content-card">
+            <h2 class="section-title">Nuestra firma</h2>
+            <p class="mb-3">
+              Nuestra práctica se fundamenta en un enfoque técnico, independiente y basado en evidencia, orientado a la transparencia financiera, la adecuada toma de decisiones y la mitigación de riesgos. :contentReference[oaicite:1]{index=1}
+            </p>
+            <p class="mb-3">
+              Operamos bajo estándares internacionales, incluyendo NIIF y NIA, así como bajo normativa local vigente, brindando soluciones confiables, oportunas y alineadas con la realidad de cada organización. :contentReference[oaicite:2]{index=2}
+            </p>
+            <p class="mb-0">
+              Prestamos especial atención a organizaciones con estructuras financieras relevantes, asociaciones y entidades que requieren un alto nivel de control, trazabilidad y cumplimiento normativo. :contentReference[oaicite:3]{index=3}
+            </p>
+
+            <ul class="check-list">
+              <li><i class="bi bi-check-circle-fill"></i><span>Enfoque preventivo</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Soluciones con criterio, ética y confianza profesional</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Trabajo técnico adaptado a cada organización</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Visión orientada a control, cumplimiento y sostenibilidad</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row g-4">
+            <div class="col-6">
+              <div class="metric-card">
+                <h3>NIIF</h3>
+                <p>Estándares internacionales aplicados en la práctica profesional. :contentReference[oaicite:4]{index=4}</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="metric-card">
+                <h3>NIA</h3>
+                <p>Base técnica para servicios de auditoría y aseguramiento. :contentReference[oaicite:5]{index=5}</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="metric-card">
+                <h3>CR</h3>
+                <p>Firma costarricense con atención profesional orientada al entorno local y regulatorio. :contentReference[oaicite:6]{index=6}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Pilares de nuestro trabajo</h2>
+        <p class="section-subtitle">
+          Construimos relaciones profesionales sobre bases sólidas, con una metodología clara y orientación a resultados.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Independencia</h4>
+            <p>Actuamos con objetividad, criterio profesional y enfoque basado en evidencia.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="bi bi-eye"></i></div>
+            <h4>Transparencia</h4>
+            <p>Promovemos claridad financiera, trazabilidad y confianza institucional.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="bi bi-diagram-3"></i></div>
+            <h4>Control</h4>
+            <p>Fortalecemos estructuras internas, políticas y procesos de supervisión.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h4>Decisión</h4>
+            <p>Generamos insumos técnicos para respaldar decisiones oportunas y sostenibles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="content-card">
+            <h2 class="section-title">A quién acompañamos</h2>
+            <p class="mb-3">
+              Acompañamos a organizaciones que requieren mayor solidez financiera, mejores prácticas de control y cumplimiento normativo alineado con su contexto operativo.
+            </p>
+            <ul class="check-list">
+              <li><i class="bi bi-check-circle-fill"></i><span>Empresas con necesidades de auditoría y análisis financiero</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Asociaciones y entidades con exigencias de control y trazabilidad</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Organizaciones que deben fortalecer sus políticas y procedimientos</span></li>
+              <li><i class="bi bi-check-circle-fill"></i><span>Entidades que enfrentan requerimientos regulatorios o fiscales</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="director-card">
+            <span class="director-badge">Dirección profesional</span>
+            <h3>Licda. Marcia Montes Mora</h3>
+            <p class="mb-3">
+              Contadora Pública Autorizada y directora de MMontes Consultores S.R.L., con un enfoque centrado en la ética, el criterio técnico y la generación de soluciones confiables para cada cliente. :contentReference[oaicite:7]{index=7}
+            </p>
+            <p class="mb-0">
+              La firma busca brindar acompañamiento profesional con cercanía, independencia y visión estratégica, contribuyendo al fortalecimiento institucional y a una toma de decisiones mejor informada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="cta-box">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <h2 class="mb-3">Una firma orientada a confianza y resultados</h2>
+            <p>
+              Si desea conocer cómo podemos apoyar a su organización en auditoría, cumplimiento, control interno o consultoría financiera, estaremos encantados de conversar con usted.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contacto.html" class="btn btn-light rounded-pill px-4 py-3 fw-semibold">Ir a contacto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-7">
+          <p class="mb-0">© 2026 MMontes Consultores SRL. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-5 text-md-end">
+          <a href="about.html" class="me-3">Quiénes somos</a>
+          <a href="servicios.html" class="me-3">Servicios</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/50683025114" target="_blank" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
