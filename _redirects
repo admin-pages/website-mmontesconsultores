@@ -1,0 +1,8 @@
+http://mmontesconsultores.com/* https://mmontesconsultores.com/:splat 301
+http://www.mmontesconsultores.com/* https://mmontesconsultores.com/:splat 301
+https://www.mmontesconsultores.com/* https://mmontesconsultores.com/:splat 301
+
+/index.html https://mmontesconsultores.com/ 301
+/about https://mmontesconsultores.com/about.html 301
+/servicios https://mmontesconsultores.com/servicios.html 301
+/contacto https://mmontesconsultores.com/contacto.html 301
